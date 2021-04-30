@@ -75,5 +75,8 @@ app.post('/get_feed', function(req, res) {
 });
 
 
-app.listen(3030);
+//app.listen(3000);
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
+});
 console.log('3030 is the magic port');
