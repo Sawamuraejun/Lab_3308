@@ -1,0 +1,62 @@
+<!--
+  TODO: Update the EJS code to insert the following information:
+    - display_title
+    - url
+    - suggested_link_text
+    - publication_date
+    - summary_short
+
+  HINT: Not sure how to display the reviews, check out Bootstrap cards here: https://getbootstrap.com/docs/4.0/components/card/
+-->
+<%
+if (items) {
+	var cards = '';
+  var Tag = items.strTags;
+
+  if(items.strTags == null){
+    var Tag = null;
+  }
+  else{
+    var Tag = items.strTags;
+  }
+
+  %>  
+
+  
+
+      <% items.forEach(function(items){ %>
+        <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-4">
+          <img src="<%= items.strMealThumb %>" class="rounded" style="width: 200px; height: 200px;">
+         </div>
+         <div class="col-8">
+          <h4><%= items.strMeal %></h4>
+          <h6>Instruction</h6>
+          <p><%= items.strInstructions %></p>
+          <h4>Tag</h4>
+          <p><%= Tag %></p>
+          <div class="row" style="margin-bottom: 20px;">
+          <div class="col-8">
+          <a class="btn-primary btn-lg rounded" style="margin-right: 10px;" href=<%= items.strSource %> role="button">View Source Website </a>
+          <a class="btn-primary btn-lg rounded" href=<%= items.strYoutube %> role="button">Watch on Youtube </a>
+        </div>
+        <div class="col-4">
+
+        </div>
+        </div>
+          <a class="btn-primary btn-lg rounded" href=<%= %> role="button">Add Review</a>
+        </div>
+
+
+        </div>
+      </div>
+
+  <% }) %>
+</div>
+</div>
+	<!-- Iterate the items object & update the cards variable -->
+
+%>
+    <%- cards %>
+<% } %>
